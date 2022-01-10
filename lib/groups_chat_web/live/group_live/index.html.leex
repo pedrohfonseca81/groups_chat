@@ -1,0 +1,23 @@
+<div class="container">
+  <div>
+    <h3>Create a group</h1>
+    <form phx-submit="create_group">
+      <div class="mb-3">
+        <label for="name" class="form-label">Group name</label>
+        <input class="form-control" name="name" autocomplete="off" id="name">
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+  <hr />
+  <div>
+    <h3>Join at a group</h1>
+    <form phx-submit="join_group">
+      <div class="mb-3">
+        <label for="name" class="form-label">Group key</label>
+        <input class="form-control" name="key" autocomplete="off" id="name">
+      </div>
+      <button type="submit" class="btn btn-primary">Join</button>
+    </form>
+  </div>
+</div>

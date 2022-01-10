@@ -1,0 +1,125 @@
+html,
+body,
+main,
+.phx-connected {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.phx-no-feedback.invalid-feedback,
+.phx-no-feedback .invalid-feedback {
+  display: none;
+}
+
+.phx-click-loading {
+  opacity: 0.5;
+  transition: opacity 1s ease-out;
+}
+
+.phx-disconnected {
+  cursor: wait;
+}
+.phx-disconnected * {
+  pointer-events: none;
+}
+
+.alert:empty {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 16px;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  margin-top: 16px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.server {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.group {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 16px;
+}
+
+.online_members {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ecf0f1;
+
+  .member {
+    margin: 4px;
+  }
+}
+
+.status-online {
+  color: green;
+}
+
+.status-offline {
+  color: gray;
+}
+
+.messages-container {
+  flex: 1 1 auto;
+  overflow: hidden scroll;
+  padding: 16px;
+
+  .messages {
+    position: relative;
+    flex: 1 1 auto;
+
+    .message {
+      display: flex;
+      flex-direction: column;
+
+      .username {
+        margin-right: 2px;
+      }
+
+      .status {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.send_message {
+  display: flex;
+  margin: 16px;
+
+  .btn {
+    margin-left: 4px;
+  }
+}

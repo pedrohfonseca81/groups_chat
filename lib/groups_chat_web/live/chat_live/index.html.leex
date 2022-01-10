@@ -1,0 +1,44 @@
+<div class="server">
+  <div class="group">
+    <div class="messages-container" id="chat" phx-hook="Messages">
+      <div class="messages">
+      <%= if length(@messages) > 0 do%>
+        <%= for message <- @messages do %>
+          <div class="message">
+            <div>
+            <%= if message.username in Enum.map(@connected_users, fn data -> data.username end) do %>
+              <i class="status status-online bi bi-record-circle-fill"></i>
+            <% else %>
+              <i class="status status-offline bi bi-record-circle-fill"></i>
+            <% end %>
+              <strong class="username"><%= message.username %></strong>
+            </div>
+            <p><%= message.body %></p>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="text-center">
+          <p>No messages here, be the first to send!</p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  <form class="send_message" let={f} for={@message} phx-submit="message">
+    <input class="form-control" id="body" name="message[body]" phx-hook="Input" autocomplete="off" />
+    <%= hidden_input :message, :username, value: @username %>
+    <%= hidden_input :message, :key, value: @id, class: :btn  %>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+  </div>
+  <div class="online_members">
+    <h5>Online members</h5>
+    <hr />
+    <%= for user <- @connected_users do %>
+      <div class="member">
+        <p>
+          <%= user.username%>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
